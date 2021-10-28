@@ -1,0 +1,53 @@
+// Comandos GIT: Manuel Valenzuela
+// Iniciamos git
+git init
+
+// Clonamos el repo 
+git clone https://github.com/GonFrecks1/Git-Practica3/
+
+// Vemos si hay cambios pendientes 
+git status
+
+// Agregamos Todos los archivos al stage area si ponemos
+// Si ponemos el nombre en vez de asterisco (*), se agrega solo ese archivo
+git add *
+
+// Guardamos o consolidamos los cambios
+git commit -m "add clase Person.cs"
+
+// git add + git commit
+git commit -am "add clase Person.cs"
+
+// Subimos al remoto (https://github.com/GonFrecks1/Git-Practica3/)
+// ya sea al main o a la rama que indiquemos
+git push origin main
+git push origin rama1
+git push origin rama2
+git push origin ramaN
+
+// Creamos una rama
+git branch Dev1
+
+// Nos posicionamos en la rama creada
+git checkout Dev1
+
+// abreviado creamos rama y nos posicionamos en ella en un solo comando 
+git checkout -B Dev1
+
+// Cuando hay un conflicto entre main y una rama
+// nos movemnos a main (git checkout main)
+//hacemos un git fetch y git pull origin main para tener los caqmbios actuales
+// ahora nos movemos a Dev2 (la rama del conflicto) y hacemo el merge
+git merge main dev2
+// aparecen los conflictos en archivo en VS Code y elejimos el codigo correcto o simplemente correjimos para normalizar nuestro codigo,
+// aplicamos el commit
+git commit -am "conflicto resuelto aplicamos ..."
+git push origin Dev2 (actualizamos la rama en la repo)
+// ya en el GitHub aplicampos el OpenPullRequest para hacer el merge de Dev2 a main.
+
+// para ver el log Graficamente XD (ta curado)
+git log --oneline --graph
+
+// CUIDADO CON ESTO: regresar a un commit atras 
+git reset --hard <AQUÍ VA LA CLAVE DEL LOG>
+
